@@ -1,3 +1,55 @@
+// Dark Mode Toggle Functionality
+const darkModeToggle = document.getElementById('darkModeToggle');
+const html = document.documentElement;
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', currentTheme);
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Add smooth transition effect
+    html.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+    
+    // Remove transition after animation completes
+    setTimeout(() => {
+        html.style.transition = '';
+    }, 300);
+}
+
+// Event listener for dark mode toggle
+if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+}
+
+// Check for system preference on page load
+function checkSystemPreference() {
+    if (!localStorage.getItem('theme')) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = prefersDark ? 'dark' : 'light';
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }
+}
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+        const theme = e.matches ? 'dark' : 'light';
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }
+});
+
+// Initialize theme on page load
+document.addEventListener('DOMContentLoaded', checkSystemPreference);
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -27,12 +79,24 @@ function scrollToSection(sectionId) {
 // Navbar background change on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    
     if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        if (currentTheme === 'dark') {
+            navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        }
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
+        if (currentTheme === 'dark') {
+            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+            navbar.style.boxShadow = 'none';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = 'none';
+        }
     }
 });
 
@@ -281,6 +345,22 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
+
+// Experience details toggle function
+function toggleDetails(button) {
+    const details = button.nextElementSibling;
+    const toggleText = button.querySelector('.toggle-text');
+    
+    if (details.classList.contains('active')) {
+        details.classList.remove('active');
+        button.classList.remove('active');
+        toggleText.textContent = 'See Details';
+    } else {
+        details.classList.add('active');
+        button.classList.add('active');
+        toggleText.textContent = 'Hide Details';
+    }
+}
 
 // Add CSS for loading state
 const loadingStyles = document.createElement('style');

@@ -31,6 +31,12 @@
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-sun light-icon"></i>
+                        <i class="fas fa-moon dark-icon"></i>
+                    </button>
+                </li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -54,7 +60,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="Nathan_square_2022.jpg" alt="Nathan Anton" class="profile-img">
+                    <img src="images/nathan-profile.jpg" alt="Nathan Anton" class="profile-img">
                 </div>
             </div>
         </div>
@@ -94,39 +100,112 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Project Coordinator</h3>
-                        <h4>Health Literacy Media</h4>
-                        <p class="timeline-date">June 2023 - June 2025</p>
-                        <ul>
-                            <li>Coordinated projects using project management systems to sequence, assign and monitor projects</li>
-                            <li>Led and facilitated regular meetings to discuss project deliverables and foster creative teamwork</li>
-                            <li>Secured $62,850 in supplemental funding from a client to enhance health-literate content production</li>
-                            <li>Supervised two employees and conducted their annual employee evaluations</li>
-                        </ul>
+                        <div class="timeline-header">
+                            <h3>Project Coordinator</h3>
+                            <h4>Health Literacy Media</h4>
+                            <p class="timeline-location">St. Louis, MO</p>
+                            <p class="timeline-date">June 2023 - June 2025</p>
+                        </div>
+                        <button class="details-toggle" onclick="toggleDetails(this)">
+                            <span class="toggle-text">See Details</span>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </button>
+                        <div class="timeline-details">
+                            <ul>
+                                <li>Coordinated projects using project management systems to sequence, assign, and monitor projects</li>
+                                <li>Led and facilitated regular meetings to discuss project deliverables, foster creative teamwork, and keep projects on track</li>
+                                <li>Presented educational content and trainings to professional audiences</li>
+                                <li>Built relationships with partners and managed their ongoing requests</li>
+                                <li>Drafted supplemental funding request to earn $62,850 in additional funds from 1 client to produce more health content and plain language reviews</li>
+                                <li>Supervised 2 employees and conducted their annual employee evaluations</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Writer and Editor</h3>
-                        <h4>Health Literacy Media</h4>
-                        <p class="timeline-date">February 2022 - June 2025</p>
-                        <ul>
-                            <li>Wrote and edited complex health information using plain language strategies</li>
-                            <li>Researched and tested innovative health communication strategies</li>
-                            <li>Developed health content for digital and print materials for public and professional audiences</li>
-                            <li>Created a wall calendar about Medicaid (distributed 10,000 printed copies throughout Missouri)</li>
-                        </ul>
+                        <div class="timeline-header">
+                            <h3>Health & Science Writer</h3>
+                            <h4>Health Literacy Media</h4>
+                            <p class="timeline-location">St. Louis, MO</p>
+                            <p class="timeline-date">February 2022 - June 2025</p>
+                        </div>
+                        <button class="details-toggle" onclick="toggleDetails(this)">
+                            <span class="toggle-text">See Details</span>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </button>
+                        <div class="timeline-details">
+                            <ul>
+                                <li>Wrote and edited complex health information using plain language strategies for pharmaceutical companies, health departments, universities, hospital systems, and advocacy organizations</li>
+                                <li>Wrote and reviewed a wide range of health-related content, such as clinical trial summaries, patient journey maps, instructions for use manuals, medical device manuals, newsletters about clinical trial research findings, websites for specific types of cancer treatment</li>
+                                <li>Wrote and reviewed scripts for animated, educational videos</li>
+                                <li>Researched and tested innovative health communication strategies</li>
+                                <li>Developed digital and print health content for public and professional audiences, including an interactive online tool for personalized kidney health reports and award-winning mental health materials</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Freelance Writer and Editor</h3>
-                        <h4>Self-Employed</h4>
-                        <p class="timeline-date">September 2016 - September 2019</p>
-                        <ul>
-                            <li>Developed and edited freelance content for clients including Anheuser-Busch, NBA, and Sigma-Aldrich</li>
-                            <li>Produced and sold independent, nonfiction poetry collections in more than 13 locally-owned shops</li>
-                        </ul>
+                        <div class="timeline-header">
+                            <h3>IT Analyst</h3>
+                            <h4>Intelliteach</h4>
+                            <p class="timeline-location">St. Louis, MO</p>
+                            <p class="timeline-date">September 2019 - September 2020</p>
+                        </div>
+                        <button class="details-toggle" onclick="toggleDetails(this)">
+                            <span class="toggle-text">See Details</span>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </button>
+                        <div class="timeline-details">
+                            <ul>
+                                <li>Wrote technical documents, such as knowledge base articles and guides</li>
+                                <li>Completed Microsoft Office Specialist certification</li>
+                                <li>Offered remote and local software support, including MS Office 365</li>
+                                <li>Investigated, debugged, and troubleshot software and application issues</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Independent Freelance Writer & Editor</h3>
+                            <h4>Self-Employed</h4>
+                            <p class="timeline-location">St. Louis, MO</p>
+                            <p class="timeline-date">September 2016 - September 2019</p>
+                        </div>
+                        <button class="details-toggle" onclick="toggleDetails(this)">
+                            <span class="toggle-text">See Details</span>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </button>
+                        <div class="timeline-details">
+                            <ul>
+                                <li>Developed and edited freelance content for clients including Sigma-Aldrich, Anheuser-Busch, and the NBA (National Basketball Association)</li>
+                                <li>Produced and sold independent, non-fiction poetry collections in more than 13 locally-owned shops and bookstores throughout the Midwest</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Multimedia Reporter</h3>
+                            <h4>KTRS Radio</h4>
+                            <p class="timeline-location">St. Louis, MO</p>
+                            <p class="timeline-date">August 2015 - September 2016</p>
+                        </div>
+                        <button class="details-toggle" onclick="toggleDetails(this)">
+                            <span class="toggle-text">See Details</span>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </button>
+                        <div class="timeline-details">
+                            <ul>
+                                <li>Wrote and edited hourly news broadcasts</li>
+                                <li>Managed and directed Livestream broadcast for a morning radio show</li>
+                                <li>Drafted and published social media content to various platforms, such as Facebook, X, and YouTube</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -207,7 +286,10 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-calendar-alt"></i>
+                        <img src="images/medicaid-calendar.png" alt="Medicaid Wall Calendar Project" class="project-img">
+                        <div class="project-overlay">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>Medicaid Wall Calendar</h3>
@@ -221,7 +303,10 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-book"></i>
+                        <img src="images/mental-health-booklet.png" alt="Mental Health Booklet Project" class="project-img">
+                        <div class="project-overlay">
+                            <i class="fas fa-book"></i>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>"Tips for Dealing with Feeling Lonely or Isolated" Booklet</h3>
@@ -235,7 +320,10 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-chart-line"></i>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Funding Initiative Project" class="project-img">
+                        <div class="project-overlay">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>Supplemental Funding Initiative</h3>
